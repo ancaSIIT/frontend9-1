@@ -1,4 +1,4 @@
-var baseUrl = "https://ancient-caverns-16784.herokuapp.com";
+var baseUrl = "https://movies-api-siit.herokuapp.com";
 
 window.Movie = function Movie(id = "") {
   this.id = id;
