@@ -10,5 +10,10 @@ register.addEventListener("click", function() {
     localStorage.setItem("username", username);
     localStorage.setItem("accessToken", data.accessToken);
     console.log ("Completed registration");
-  });
-});
+  }).catch(function(response) {
+    if (response.status = 409) {
+      var conflict = document.getElementById("rejection")
+      conflict.innerHTML = "Username already existing. Please try again.";
+    }
+  })
+})
