@@ -15,13 +15,15 @@ function displayMoviesListHtml(data) {
 
     var linkElement = clonedElement.querySelector("a");
     linkElement.href = "/movies/" + movie._id;
+    window.movieOptions = clonedElement.getElementsByClassName("movie-options")[0];
 
     var titleElement = clonedElement.querySelector("h3");
     titleElement.innerText = movie.Title;
 
+
     var posterElement = clonedElement.querySelector("img")
     posterElement.setAttribute("src", movie.Poster);
-
     listElement.appendChild(clonedElement);
+  clonedElement.id = movie._id;
   }
 }
