@@ -4,106 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../models/register.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>Register</title>
-<!-- CSS Style suggestion -->
-  <style>
-  body {
-    font-family: "cinematic";
-    color: white;
-  }
-
-  * {box-sizing: border-box}
-
-  .container {
-    padding: 20px;
-    position: fixed;
-    text-align: center;
-    margin: 0 auto;
-    left: 50%;
-    margin-left: -350px;
-    width: 700px;
-    background: linear-gradient(to top, #F7AF31, black, black);
-    z-index: 8;
-  }
-
-  input[type=text], input[type=password] {
-    width: 50%;
-    padding: 15px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    display: block;
-    border: none;
-    background: #f1f1f1;
-  }
-
-  input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-
-  hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
-    width: 50%;
-  }
-
-  .registerbtn {
-    background-color: black;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 20%;
-    opacity: 0.9;
-  }
-
-  .registerbtn:hover {
-    opacity:1;
-  }
-
-  .signin {
-    background-color: black;
-    color: orange;
-    margin: 0 auto;
-    width: 40%;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
-
-  a:hover {
-    color: black;
-  }
-
-  #rejection {
-    font-size: 22px;
-  }
-  </style>
 </head>
 <body>
-<!-- <form action="" method="post"> -->
-  <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-    <p id="rejection"></p>
-    <label for="email"><b>Email/User</b></label>
-    <input type="text" id="username" placeholder="Enter Email / User" name="user" required>
+  <button onclick="document.getElementById('display-modal').style.display='block'" style="width:auto">Register</button>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" id="password" placeholder="Enter Password" name="password" required>
+  <div id="display-modal" class="modal">
+      <div class="user-register animate">
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="password-repeat" required>
-    <hr>
-    <button type="submit" class="registerbtn">Register</button>
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+          <div class="image">
+              <img src="../models/pictures/logo.png" alt="logo" id="logoImg">
+          </div>
+
+          <div class="container-register">
+              <label for="username" id="user">Username</label>
+              <input type="text" id = "userName" placeholder="Enter Username" name="username" required>
+
+              <label for="password" id="pass">Password</label>
+              <input type="password" id = "passWord" placeholder="Enter Password" name="password" required>
+
+              <label for="password" id="pass">Repeat Password</label>
+              <input type="password" id = "passWord" placeholder="Enter Password" name="password" required>
+
+              <button type="submit" class="registerBtn">Register</button>
+
+              <p id="status"></p>
+              <span>Already have an account? <a href="login.html">Sign in!</a></span>
+
+              <div class="cancel-login">
+                  <button type="button" class="cancel-btn">Cancel</button>
+              </div>
+          </div>
+      </div>
+
   </div>
-<!-- </form> -->
+
 <script src="../models/Auth.js"></script>
 <script src="../views/register.js"></script>
 </body>
