@@ -19,19 +19,25 @@ var register = document.querySelector(".registerBtn");
 register.addEventListener("click", function() {
   var username = document.getElementById("userName").value;
   var password = document.getElementById("passWord").value;
-  var token = localStorage.getItem("accessToken")
+  var password2 = document.getElementById("password2").value;
+  var confirm = document.getElementById("status");
   var user = new Auth();
-  var confirm = document.get
-  user.registerFromAPI(username, password).then(function(data) {
-    console.log(data);
-    localStorage.setItem("username", username);
-    localStorage.setItem("accessToken", data.accessToken);
-    var confirm = document.getElementById("status");
-    confirm.innerHTML = "Completed registration successfuly!"
-  }).catch(function(response) {
-    if (response.status = 409) {
-      var conflict = document.getElementById("status")
-      conflict.innerHTML = "Username already existing. Please try again.";
-    }
-  });
+  if (password ===  password2) {
+    user.registerFromAPI(username, password).then(function(data) {
+      console.log(data);
+      localStorage.setItem("username", username);
+      localStorage.setItem("accessToken", data.accessToken);
+      confirm.innerHTML = "Completed registration successfuly!"
+      var modal = document.getElementById("display-modal");
+      setTimeout(function() {
+          modal.style.display="none";
+      }, 1500);
+    }).catch(function(response) {
+      if (response.status = 409) {
+        confirm.innerHTML = "Username already existing. Please try again.";
+      };
+    });
+  } else {
+    confirm.innerHTML = "Passwords do not match. Please try again."
+  }
 });

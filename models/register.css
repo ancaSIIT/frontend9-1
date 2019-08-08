@@ -44,7 +44,7 @@ input[type=password] {
     border: 1px solid #ccc;
 }
 
-#user,#pass {
+#user,#pass, #rpass {
     font-weight: bold;
     margin-left: 10px;
 }
