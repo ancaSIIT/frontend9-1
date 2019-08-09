@@ -31,7 +31,7 @@
         <div class="authentification">
           <button>ADD GAME</button>
           <button onclick="document.getElementById('display-modal').style.display='block'" style="width:auto">REGISTER</button>
-          <button onclick="document.getElementById('display-modal').style.display='block'" style="width:auto">LOGIN</button>
+          <button onclick="document.getElementById('display-modal-login').style.display='block'" style="width:auto">LOGIN</button>
         </div>
       </div>
       <div class="menu">
@@ -143,7 +143,35 @@
           </div>
       </div>
 
+      <!-- LOGIN -->
 
+      <div id="display-modal-login" class="modal">
+          <form class="user-login animate">
+              <div class="image">
+                  <img src="../assets/pictures/logo.png" alt="logo" id="logoImg">
+              </div>
+
+              <div>
+                  <div class="container-login">
+                      <label for="username" id="user">Username</label>
+                      <input type="text" id = "userName" placeholder="Enter Username" name="username" required>
+
+                      <label for="password" id="pass">Password</label>
+                      <input type="password" id = "passWord" placeholder="Enter Password" name="password" required>
+
+                      <button type="submit" class="submit-btn">Login</button> <br>
+                      <label id="checkbox">
+                          <input type="checkbox" checked="checked" name="remember"> Remember me
+                      </label>
+                  </div>
+              </div>
+
+              <div class="cancel-login">
+                  <button type="button" class="cancel-btn">Cancel</button>
+                  <span>Forgot <a href="#">password?</a></span>
+              </div>
+          </form>
+      </div>
 
       <!----NEWS---->
       <div class="news">
