@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="mainPage.css">
+  <link rel="stylesheet" href="../assets/mainPage.css">
+  <link rel="stylesheet" href="../assets/register.css">
+  <!-- FUTURE CSS -->
+  <!-- <link rel="stylesheet" href="../assets/login.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Acme|Playfair+Display|Roboto+Condensed|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -28,7 +31,7 @@
 
         <div class="authentification">
           <button>ADD GAME</button>
-          <button>REGISTER</button>
+          <button onclick="document.getElementById('display-modal').style.display='block'" style="width:auto">REGISTER</button>
           <button>LOGIN</button>
         </div>
       </div>
@@ -109,7 +112,39 @@
           </div>
         </div>
         <div id="list-movies"></div>
-</div>
+      </div>
+
+      <!-- REGISTER -->
+      <div id="display-modal" class="modal">
+          <div class="user-register animate">
+
+              <div class="image">
+                  <img src="../assets/pictures/logo.png" alt="logo" id="logoImg">
+              </div>
+
+              <div class="container-register">
+                  <label for="username" id="user">Username</label>
+                  <input type="text" id = "userName" placeholder="Enter Username" name="username" required>
+
+                  <label for="password" id="pass">Password</label>
+                  <input type="password" id = "passWord" placeholder="Enter Password" name="password" required>
+
+                  <label for="password" id="pass">Repeat Password</label>
+                  <input type="password" id = "password2" placeholder="Enter Password" name="password" required>
+
+                  <button type="submit" class="registerBtn">Register</button>
+
+                  <p id="status"></p>
+                  <span>Already have an account? <a href="login.html">Sign in!</a></span>
+
+                  <div class="cancel-login">
+                      <button type="button" class="cancel-btn">Cancel</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
 
       <!----NEWS---->
       <div class="news">
@@ -129,6 +164,10 @@
   <script src="../views/home.js"></script>
   <script src="../models/Movie.js"></script>
   <script src="../views/MovieDetails.js"></script>
+  <script src="../models/Auth.js"></script>
+  <script src="../views/register.js"></script>
+  <!-- FUTURE SCRIPTS -->
+  <!-- <script src="../views/Login.js"></script> -->
 
 </body>
 
