@@ -30,7 +30,7 @@
 
         <div class="authentification">
           <button>ADD GAME</button>
-          <button onclick="document.getElementById('display-modal').style.display='block'" style="width:auto">REGISTER</button>
+          <button onclick="document.getElementById('display-modal-register').style.display='block'" style="width:auto">REGISTER</button>
           <button onclick="document.getElementById('display-modal-login').style.display='block'" style="width:auto">LOGIN</button>
         </div>
       </div>
@@ -114,7 +114,7 @@
       </div>
 
       <!-- REGISTER -->
-      <div id="display-modal" class="modal">
+      <div id="display-modal-register" class="modal-register">
           <div class="user-register animate">
 
               <div class="image">
@@ -136,8 +136,8 @@
                   <p id="status"></p>
                   <span>Already have an account? <a href="login.html">Sign in!</a></span>
 
-                  <div class="cancel-login">
-                      <button type="button" class="cancel-btn">Cancel</button>
+                  <div class="cancel-register">
+                      <button type="button" class="cancel-reg-btn">Cancel</button>
                   </div>
               </div>
           </div>
@@ -145,7 +145,8 @@
 
       <!-- LOGIN -->
 
-      <div id="display-modal-login" class="modal">
+
+      <div id="display-modal-login" class="modal-login">
           <form class="user-login animate">
               <div class="image">
                   <img src="../assets/pictures/logo.png" alt="logo" id="logoImg">
@@ -167,17 +168,17 @@
               </div>
 
               <div class="cancel-login">
-                  <button type="button" class="cancel-btn">Cancel</button>
+                  <button type="button" class="cancel-login-btn">Cancel</button>
                   <span>Forgot <a href="#">password?</a></span>
               </div>
           </form>
       </div>
 
       <!----NEWS---->
-      <div class="news">
+      <!-- I-am dat disable momentan ca umple consola cu erori -->
+      <!-- <div class="news">
         <iframe src="https://www.cinemablend.com/news.php" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="1" marginheight="0px" marginwidth="0px" height="350px" width="1400px" allowfullscreen></iframe>
-
-      </div>
+      </div> -->
 
     </div>
 

@@ -1,7 +1,7 @@
 //get modal
-var modal = document.getElementById('display-modal');
+var modal = document.getElementById('display-modal-login');
 // close the modal if the user click outside of if
-document.getElementById('display-modal').addEventListener("click", function(event){
+document.getElementById('display-modal-login').addEventListener("click", function(event){
     if(event.target == modal) {
         modal.style.display = "none";
     }
@@ -9,7 +9,7 @@ document.getElementById('display-modal').addEventListener("click", function(even
 
 
 //close the modal if the "cancel" button is clicked
-var cancelBtn = document.querySelector(".cancel-btn");
+var cancelBtn = document.querySelector(".cancel-login-btn");
 cancelBtn.onclick = function(event) {
     modal.style.display = "none";
 }
@@ -23,7 +23,3 @@ document.querySelector('.submit-btn').addEventListener("click", function(event){
     var pass = document.getElementById('passWord').value;
     console.log(pass);
 })
-
-
-
-

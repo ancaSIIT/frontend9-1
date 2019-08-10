@@ -1,17 +1,17 @@
 // Get modal
-var modal = document.getElementById('display-modal');
+var modalreg = document.getElementById('display-modal-register');
 
 // Close modal functionality
-document.getElementById('display-modal').addEventListener("click", function(event){
+document.getElementById('display-modal-register').addEventListener("click", function(event) {
     if(event.target == modal) {
-        modal.style.display = "none";
+        modalreg.style.display = "none";
     }
 })
 
-var cancelBtn = document.querySelector(".cancel-btn");
-cancelBtn.onclick = function(event) {
-    modal.style.display = "none";
-}
+var cancelreg = document.querySelector(".cancel-reg-btn");
+cancelreg.onclick = function(event) {
+    modalreg.style.display = "none";
+};
 
 var register = document.querySelector(".registerBtn");
 
@@ -28,7 +28,7 @@ register.addEventListener("click", function() {
       localStorage.setItem("username", username);
       localStorage.setItem("accessToken", data.accessToken);
       confirm.innerHTML = "Completed registration successfuly!"
-      var modal = document.getElementById("display-modal");
+      var modal = document.getElementById("display-modal-register");
       setTimeout(function() {
           modal.style.display="none";
       }, 1500);

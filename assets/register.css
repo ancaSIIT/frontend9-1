@@ -1,4 +1,4 @@
-.modal {
+.modal-register {
   font-family: 'Acme', sans-serif;
   display: none;
   position: fixed;
@@ -17,27 +17,27 @@
   border: 1px solid #e67300;
   box-shadow: 2px 2px  rgba(0, 0, 0,0.5);
   width: 500px;
-  height: 680px;
+  height: 690px;
   background-color:#f7b228;
   border: 1px solid black;
   margin: 50px auto 0 auto;
 }
 
-.image {
+.user-register > .image {
     text-align:center;
     position: relative;
     margin: 20px 0 15px 0;
 }
 
-#logoImg {
+.user-register > .image > #logoImg {
     width: 40%;
     background-color: white;
     border-radius: 10%;
     margin: 5px;
 }
 
-input[type=text],
-input[type=password] {
+.container-register > input[type=text],
+.container-register > input[type=password] {
     width: 88%;
     padding: 10px 20px;
     margin: 10px;
@@ -50,7 +50,30 @@ input[type=password] {
     margin-left: 10px;
 }
 
-.registerBtn {
+.container-register > span {
+    float: right;
+    margin-right: 20px;
+    padding-top: 10px;
+}
+
+.container-register > p {
+  margin-left: 10px;
+  margin-bottom: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.container-register > a {
+  text-decoration: none;
+  font-style: bold;
+  color: white;
+}
+
+.container-register > a:hover {
+  color: black;
+}
+
+.container-register > .registerBtn {
     font-family: 'Acme', sans-serif;
     font-size: 25px;
     width: 96.5%;
@@ -62,39 +85,17 @@ input[type=password] {
     color: #e67300;
 }
 
-.registerBtn:hover {
+.container-register> .registerBtn:hover {
     opacity: 0.8;
 }
 
-.cancel-register{
+.cancel-register {
     width: 100%;
     margin: 20px 0 0 0;
     padding: 15px;
 }
 
-span {
-    float: right;
-    margin-right: 20px;
-    padding-top: 10px;
-}
-
-p {
-  margin-left: 10px;
-  font-size: 20px;
-  text-align: center;
-}
-
-a {
-  text-decoration: none;
-  font-style: bold;
-  color: white;
-}
-
-a:hover {
-  color: black;
-}
-
-.cancel-btn {
+.cancel-reg-btn {
     font-family: 'Acme', sans-serif;
     font-size: 18px;
     width: auto;
@@ -106,7 +107,7 @@ a:hover {
     cursor: pointer;
 }
 
-.cancel-btn:hover {
+.cancel-reg-btn:hover {
     opacity: 0.8;
 }
 
