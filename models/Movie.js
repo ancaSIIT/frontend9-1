@@ -12,6 +12,7 @@ Movie.prototype.getDetails = function() {
   return fetch(baseUrl + "/movies/" + this.id).then(async function(response) {
     if (response.ok) {
       var data = await response.json();
+      
       for(var propertyName in data) {
         if (propertyName == "_id") {
           continue;

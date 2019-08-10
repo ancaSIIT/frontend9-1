@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+  background: linear-gradient(to top, #F7AF31, black, black);
+}
+
 body {
   margin: 0;
   font-family: 'Acme', sans-serif;
@@ -21,9 +26,6 @@ a:hover {
 
 button:hover {
   cursor: pointer;
-}
-.container {
-  background: linear-gradient(to top, #F7AF31, black, black);
 }
 @font-face {
   src: url("../assets/fonts/Limelight-Regular.ttf") format("truetype");
@@ -337,7 +339,7 @@ border-bottom: 2px solid black;
   opacity: 0.2;
 }
 #title-element {
-  
+
   color: black;
   width: 220px;
   text-align: center;
