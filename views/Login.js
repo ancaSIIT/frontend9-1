@@ -18,8 +18,8 @@ var submitBtn = document.querySelector('.submit-btn')
 //Register implementation
 submitBtn.addEventListener("click", function () {
     event.preventDefault();
-    var username = document.getElementById('userName').value;
-    var password = document.getElementById('passWord').value;
+    var username = document.getElementById('userName-login').value;
+    var password = document.getElementById('passWord-login').value;
     var user = new Auth();
 
     user.loginFromAPI(username,password).then(function(data) {

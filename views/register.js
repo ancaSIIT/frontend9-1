@@ -17,9 +17,9 @@ var register = document.querySelector(".registerBtn");
 
 // Register Implementation
 register.addEventListener("click", function() {
-  var username = document.getElementById("userName").value;
-  var password = document.getElementById("passWord").value;
-  var password2 = document.getElementById("password2").value;
+  var username = document.getElementById("username-register").value;
+  var password = document.getElementById("password-register").value;
+  var password2 = document.getElementById("password-register2").value;
   var confirm = document.getElementById("status");
   var user = new Auth();
   if (password ===  password2) {
