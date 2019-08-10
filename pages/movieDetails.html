@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="../assets/mainPage.css">
+    <link rel="stylesheet" href="../assets/movie.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-container">
+        <div class="authentification-media-container">
+          <div class="media">
+            <a href="https://www.facebook.com/imdb/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/imdb" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.instagram.com/imdb/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://play.google.com/store/apps/details?id=com.imdb.mobile&hl=ro" target="_blank"><i class="fab fa-google-play"></i></a>
+            <a href="https://apps.apple.com/us/app/imdb-movies-tv/id342792525" target="_blank"><i class="fab fa-app-store-ios"></i></a>
+          </div>
+
+          <div class="authentification">
+            <button>ADD GAME</button>
+            <button onclick="document.getElementById('display-modal').style.display='block'" style="width:auto">REGISTER</button>
+            <button onclick="document.getElementById('display-modal-login').style.display='block'" style="width:auto">LOGIN</button>
+          </div>
+        </div>
+        <div class="menu">
+          <img src="../assets/pictures/logo.png" alt="">
+          <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="#">MOVIES</a></li>
+            <li><a href="#">TV SERIES</a></li>
+            <li><a href="#">ABOUT</a></li>
+          </ul>
+          <div class="cover"></div>
+        </div>
+      </div>
+      <!-------BODY ----->
+      <div class="wrapper">
+        <div class="titleDisplay">
+            <h1 class="title"></h1>
+            <h3 class="year"></h3>
+          </div>
+        <div class="row">
+          <div class="col">
+            <div class="image">
+              <img class="poster" src="" />
+            </div>
+            <div class="details">
+              <div class="details1">
+                <h4>Release Date</h4>
+                <span class="releaseDate"></span>
+              </div>
+              <div class="details2">
+                 <h4>Runtime</h4>
+                 <span class="runtime"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <dl class="characteristics">
+            </dl>
+          </div>
+        </div>
+        <p class="description"></p>
+      </div>
+
+    <script src = "../models/Movie.js"></script>
+    <script src = "../views/movieDetails.js"></script>
+  </body>
+</html>
+
+<!-- //● Title
+● Year
+● Runtime
+● Genre
+● Language
+● Country
+● Poster
+● imdbRating
+● imdbVotes
+● imdbID
+● Type -->
