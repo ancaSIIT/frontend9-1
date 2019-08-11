@@ -53,10 +53,17 @@
     margin-left: 10px;
 }
 
+.user-login > p {
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-size: 18px;
+    text-align: center;
+  }
+
 .submit-btn{
     font-family: 'Acme', sans-serif;
     font-size: 18px;
-    width: 96.5%;
+    width: 88%;
     margin: 10px;
     border: none;
     cursor: pointer;
