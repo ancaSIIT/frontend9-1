@@ -21,19 +21,20 @@ submitBtn.addEventListener("click", function () {
     var username = document.getElementById('userName-login').value;
     var password = document.getElementById('passWord-login').value;
     var loginError = document.getElementById("confirm");
+
     var user = new Auth();
-   
+
 
     user.loginFromAPI(username,password).then(function(data) {
         console.log(data);
         localStorage.setItem("accessToken", data.accessToken);
         localStorage.setItem("username", username);
+        loginError.innerHTML = "Logged in!";
         setTimeout(function () {
             modal.style.display = "none";
-        }, 100);
-    
-
-    }).catch(function(response) {
+        }, 1500);
+        showButton();
+      }).catch(function(response) {
         if(response.status=401) {
             loginError.innerHTML = "User not found/wrong password!";
         }

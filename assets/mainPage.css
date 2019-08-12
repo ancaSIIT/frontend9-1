@@ -455,6 +455,11 @@ h1 ,h2 ,h3 ,h4 {
   background-position: 0;
 }
 
+.edit, .delete {
+  display: none;
+}
+
+
 /*NEWS*/
 .news {
   margin-top: 50px;
