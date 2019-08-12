@@ -5,9 +5,14 @@ body{
   color: white;
 }
 .wrapper{
+  background: linear-gradient(to top, #F37335, #FDC830);
   max-width: 1400px;
+  height: 700px;
+  position: relative;
   padding: 0 15px;
   margin: 90px auto 0;
+  border: 2px solid black;
+
 }
 
 .titleDisplay{
@@ -85,7 +90,7 @@ dt {
   float: left;
   width: 110px;
   margin-bottom: 10px;
-  font-weight: bold
+  font-weight: bold;
   color: white;
   display: block;
 }

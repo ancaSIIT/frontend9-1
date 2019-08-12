@@ -5,6 +5,7 @@
 html {
   min-height: 100%;
   background: linear-gradient(to top, #F7AF31, black, black);
+  overflow-x: hidden;
 }
 
 body {
@@ -27,20 +28,24 @@ a:hover {
 button:hover {
   cursor: pointer;
 }
+h1 ,h2 ,h3 ,h4 {
+  cursor: pointer;
+}
 @font-face {
   src: url("../assets/fonts/Limelight-Regular.ttf") format("truetype");
   font-family: "cinematic";
 }
+
 @font-face {
   src: url("../assets/fonts/Theatrical.ttf") format("truetype");
   font-family: "theatrical";
-
 }
+
 @font-face {
   src: url("../assets/fonts/BLADRMF_.ttf") format("truetype");
   font-family: "movie-title";
-
 }
+
 .popcorn-image {
   width: 500px;
   height: 500px;
@@ -92,19 +97,39 @@ button:hover {
 
 .authentification>button {
   outline: none;
+  position: relative;
+  background: transparent;
   border: 2px solid orange;
-  border-radius: 1px;
-  color: orange;
-  background-color: black;
-  padding: 5px 10px 5px 10px;
-  font-size: 20px;
+  padding: 0;
   margin-left: 10px;
+  z-index: 1;
   margin-bottom: 10px;
   margin-top: 5px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
-.authentification > button:hover {
-  opacity: 0.5;
-  transition: 0.4s;
+
+.authentification>button span {
+  display: inline-block;
+  background: linear-gradient(45deg, black 50%, orange 50%);
+  padding: 5px 10px 5px 10px;
+  font-size: 21px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.authentification>button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(45deg, orange 50%, black 50%);
+  z-index: -1;
+}
+
+#add-game {
+  display: none;
 }
 
 /* MENU */
@@ -121,7 +146,7 @@ button:hover {
   box-shadow: 1px 20px 41px -12px rgba(186, 140, 2, 1);
 }
 
-.menu>img {
+.menu img {
   width: 70px;
   height: 60px;
   margin-right: 45px;
@@ -156,7 +181,7 @@ button:hover {
 .menu>ul>li>a {
   color: black;
   font-size: 20px;
-  font-family: "cinematic" , serif;
+  font-family: "cinematic", serif;
 }
 
 /*SEARCH */
@@ -188,13 +213,11 @@ button:hover {
   background-color: rgba(1, 1, 1, 0);
   position: relative;
   font-size: 15px;
-
 }
 
 .search-container>input::placeholder {
   color: black;
   font-size: 15px;
-
 }
 
 .search-container>button {
@@ -229,58 +252,63 @@ button:hover {
   margin-right: auto;
   margin-top: 60px;
 }
+
 .movie-and-filter {
   display: flex;
 }
+
 /*FILTER */
 .filters {
   margin-top: 50px;
   width: 240px;
   height: 750px;
   border: 2px solid black;
-    background: linear-gradient(to top, #F37335, #FDC830,#FDC830);
-    box-shadow: 10px 20px 41px -12px rgba(186, 140, 2, 1);
-    z-index: 4;
+  background: linear-gradient(to top, #F37335, #FDC830, #FDC830);
+  box-shadow: 4px 20px 25px -12px rgba(186, 140, 2, 1);
+  z-index: 4;
 }
-.filters > h2 {
-  font-family: "theatrical" , serif;
+
+.filters>h2 {
+  font-family: "theatrical", serif;
   font-size: 40px;
   text-align: center;
+}
 
+.filters>h4 {
+  font-family: "theatrical", serif;
+  font-size: 25px;
+  margin-left: 10px;
+  border-bottom: 2px solid black;
 }
-.filters > h4 {
-font-family: "theatrical" , serif;
-font-size: 25px;
-margin-left: 10px;
-border-bottom: 2px solid black;
-}
+
 .filters img {
   position: absolute;
   width: 250px;
   height: 270px;
   top: 640px;
   z-index: 0;
-
 }
+
 /* CHECKBOX */
 .container-checkbox {
-    position: relative;
-    display: block;
-    margin-bottom: 15px;
-    margin-left: 40px;
-    z-index: 1;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: bold;
-
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+  margin-left: 40px;
+  z-index: 1;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
 }
+
 .container-checkbox:hover {
   cursor: pointer;
 }
-.container-checkbox input{
+
+.container-checkbox input {
   position: absolute;
   opacity: 0;
-
 }
+
 .checkmark {
   position: absolute;
   width: 20px;
@@ -290,14 +318,17 @@ border-bottom: 2px solid black;
   left: -25px;
   border: 2px solid black;
 }
-.container-checkbox:hover input ~ .checkmark {
+
+.container-checkbox:hover input~.checkmark {
   background-color: gray;
   transition: 0.5s;
 }
-.container-checkbox input:checked ~.checkmark {
+
+.container-checkbox input:checked~.checkmark {
   background-color: black;
 }
-.container-checkbox input:checked ~.checkmark::before {
+
+.container-checkbox input:checked~.checkmark::before {
   font-family: "Font Awesome 5 Free";
   content: "\f00c";
   display: inline-block;
@@ -312,42 +343,54 @@ border-bottom: 2px solid black;
 }
 
 /* TEMPLATE MOVIES*/
-
-
 #template {
   display: none;
 }
+
 .title-poster {
-  background-color: white;
   position: relative;
+  background-color: white;
+  width: 100%;
+  border: 1px solid black;
 }
+
 #poster-element {
-  border: 1px solid white;
-  width: 221px;
-  height: 300px;
-}
-#poster-element:hover {
-  opacity: 0.2;
-  transition: 0.8s;
-}
-#poster-element:hover ~ #title-element {
+  opacity: 1;
   display: block;
-  color:black;
+  width: 219.2px;
+  height: 300px;
 
 }
-#title-element:hover  #poster-element {
-  opacity: 0.2;
-}
-#title-element {
 
-  color: black;
-  width: 220px;
-  text-align: center;
-  font-family: "cinematic";
-  font-size: 20px;
+.middle {
+  opacity: 0;
   position: absolute;
-  top: 100px;
-  display: none;
+  width: 100%;
+  height: 20px;
+  top: 0;
+}
+
+.title-poster:hover #poster-element {
+  opacity: 0.1;
+  transition: 0.3s;
+}
+
+.title-poster:hover .middle {
+  opacity: 1;
+  transition: 1.5s;
+  transform: translateY(8.5em);
+}
+
+#title-element {
+  margin: 0;
+  padding: 0;
+  color: black;
+  width: 100%;
+  font-family: "cinematic";
+  text-shadow: 1px 5px 20px black;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
 }
 
 #list-movies {
@@ -358,27 +401,58 @@ border-bottom: 2px solid black;
   width: 1110px;
   margin-top: 50px;
   margin-left: 50px;
-  background: linear-gradient(to top, #F37335, #FDC830,#FDC830);
-  box-shadow: 10px 20px 41px -12px rgba(186, 140, 2, 1);
+  background: linear-gradient(to top, #F37335, #FDC830, #FDC830);
+  box-shadow: 1px 20px 20px -14px rgba(186, 140, 2, 1);
 }
+
 .movie-options {
   margin-left: 4px;
   display: flex;
   justify-content: center;
 }
-.movie-options > button {
-  background-color: orange;
-  color: black;
+
+.movie-options>button {
+  background-color: transparent;
   border: 3px solid black;
   width: 70px;
   height: 35px;
-  font-weight: bold;
-  font-size: 15px;
+  position: relative;
   margin-top: 5px;
   margin-left: 10px;
-font-family: 'Roboto Condensed', sans-serif;
+  z-index: 1;
+}
 
+.movie-options>button span {
+  display: inline-block;
+  background: linear-gradient(45deg, orange 50%, black 50%);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+.movie-options>button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(45deg, black 50%, orange 50%);
+  z-index: -1;
+}
+
+.same-effect>button>span,
+.same-effect>button:after {
+  background-size: 300%;
+  background-position: 100%;
+  transition: 1s, font-size 0.2s;
+}
+
+.same-effect>button:hover>span,
+.same-effect>button:hover:after {
+  background-position: 0;
 }
 
 /*NEWS*/
@@ -388,10 +462,9 @@ font-family: 'Roboto Condensed', sans-serif;
   margin-right: auto;
   border: 1px solid black;
   background-color: white;
-    width: 1400px;
-    margin-bottom: 20px;
+  width: 1400px;
+  margin-bottom: 20px;
 }
-
 
 /*PAGES*/
 .pages {
@@ -400,5 +473,4 @@ font-family: 'Roboto Condensed', sans-serif;
   margin-left: auto;
   margin-right: auto;
   background-color: black;
-
 }
