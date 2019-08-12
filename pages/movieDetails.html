@@ -7,9 +7,13 @@
     <title>Movie Details</title>
     <link rel="stylesheet" href="../assets/mainPage.css">
     <link rel="stylesheet" href="../assets/movie.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Playfair+Display|Roboto+Condensed|Roboto+Slab|Ubuntu&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
+      <img class="popcorn-image" src="../assets/pictures/popcorn.png" alt="">
+      <img class="soda-image" src="../assets/pictures/soda.png" alt="">
       <div class="header-container">
         <div class="authentification-media-container">
           <div class="media">
@@ -20,14 +24,14 @@
             <a href="https://apps.apple.com/us/app/imdb-movies-tv/id342792525" target="_blank"><i class="fab fa-app-store-ios"></i></a>
           </div>
 
-          <div class="authentification">
-            <button>ADD GAME</button>
-            <button onclick="document.getElementById('display-modal').style.display='block'" style="width:auto">REGISTER</button>
-            <button onclick="document.getElementById('display-modal-login').style.display='block'" style="width:auto">LOGIN</button>
+          <div class="authentification same-effect">
+            <button id="add-game"><span>ADD GAME</span></button>
+            <button onclick="document.getElementById('display-modal-register').style.display='block'" style="width:auto"><span>REGISTER</span></button>
+            <button onclick="document.getElementById('display-modal-login').style.display='block'" style="width:auto"><span>LOGIN</span></button>
           </div>
         </div>
         <div class="menu">
-          <img src="../assets/pictures/logo.png" alt="">
+          <a href="home.html"><img src="../assets/pictures/logo.png" alt=""></a>
           <ul>
             <li><a href="home.html">HOME</a></li>
             <li><a href="#">MOVIES</a></li>
@@ -35,10 +39,15 @@
             <li><a href="#">ABOUT</a></li>
           </ul>
           <div class="cover"></div>
+          <div class="search-container">
+            <input placeholder="Search..." id="search-bar" type="text">
+            <button id="search-button"></button>
+          </div>
         </div>
       </div>
       <!-------BODY ----->
       <div class="wrapper">
+
         <div class="titleDisplay">
             <h1 class="title"></h1>
             <h3 class="year"></h3>
