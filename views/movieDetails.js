@@ -1,5 +1,5 @@
-//var movieId = getQueryValue("id");
-var movieId = "5d4d806617f63000225e34e1";
+ var movieId = getQueryValue("id");
+// var movieId = "5d51842d2959e800223b12fd";
 var movie = new Movie(movieId);
 
 movie.getDetails().then(function(movie) {displayMovieDetails(movie);});
@@ -82,7 +82,7 @@ function displayMovieDetails(data){
   var description = document.querySelector(".description");
   description.innerHTML = data.Plot;
 }
-function getQueryValue() {
+function getQueryValue(key) {
   var query = window.location.search.substring(1);
   var vars = query.split("&");
   for (var i = 0; i < vars.length; i++) {

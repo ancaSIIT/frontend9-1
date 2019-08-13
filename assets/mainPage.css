@@ -354,7 +354,7 @@ h1 ,h2 ,h3 ,h4 {
   border: 1px solid black;
 }
 
-#poster-element {
+.poster-element {
   opacity: 1;
   display: block;
   width: 219.2px;
@@ -370,7 +370,7 @@ h1 ,h2 ,h3 ,h4 {
   top: 0;
 }
 
-.title-poster:hover #poster-element {
+.title-poster:hover .poster-element {
   opacity: 0.1;
   transition: 0.3s;
 }
@@ -381,7 +381,7 @@ h1 ,h2 ,h3 ,h4 {
   transform: translateY(8.5em);
 }
 
-#title-element {
+.title-element {
   margin: 0;
   padding: 0;
   color: black;
