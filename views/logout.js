@@ -1,14 +1,13 @@
 
-var token = localStorage.getItem('accessToken');
 
 var logoutSession = document.getElementById('logoutBtn');
 logoutSession.addEventListener("click", function() {
-  
-var logout = new LogoutFromAPI();
-logout.get().then(function(token) {
+
+var auth = new Auth();
+auth.logout().then(function(token) {
         console.log(token);
-    localStorage.removeItem(token);
-	location.reload();
+    localStorage.removeItem('accessToken');
+  	location.reload();
 
     }).catch(function(response) {
         if(response.status=403) {
@@ -16,5 +15,3 @@ logout.get().then(function(token) {
         }
     });
 });
-
- 
