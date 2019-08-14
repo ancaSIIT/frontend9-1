@@ -13,14 +13,8 @@ function showButton() {
 
   })
   var addButton = document.getElementById('add-game').style.display = "inline-block";
-
+  var showLogout = document.getElementById('logoutBtn').style.display = 'initial';
+  var hideLogin =  document.getElementById('loginBtn').style.display = "none";
+ var hideRegister =   document.getElementById('registerBtn').style.display = "none";
 }
-};
-
-function hideButton() {
-  if (localStorage.getItem("accessToken") !== null) {
- document.getElementById('logoutBtn').style.display = 'initial';
-  document.getElementById('loginBtn').style.display = "none";
- document.getElementById('registerBtn').style.display = "none";
-	}
 };
