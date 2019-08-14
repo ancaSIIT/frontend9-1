@@ -12,5 +12,7 @@ function showButton() {
     button.style.display = "block";
   })
   var addButton = document.getElementById('add-game').style.display = "inline-block";
+  var hideLogin =  document.getElementById('display-modal-login')style.display = "none";
+  var hideRegister =  document.getElementById('display-modal-register')style.display = "none";
 }
 };
