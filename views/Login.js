@@ -34,6 +34,7 @@ submitBtn.addEventListener("click", function () {
             modal.style.display = "none";
         }, 1500);
         showButton();
+		hideButton();
       }).catch(function(response) {
         if(response.status=401) {
             loginError.innerHTML = "User not found/wrong password!";

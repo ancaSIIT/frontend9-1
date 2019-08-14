@@ -16,3 +16,11 @@ function showButton() {
  
 }
 };
+
+function hideButton() {
+  if (localStorage.getItem("accessToken") !== null) {
+ document.getElementById('logoutBtn').style.display = 'initial';
+  document.getElementById('loginBtn').style.display = "none";
+ document.getElementById('registerBtn').style.display = "none"; 
+	}
+};
