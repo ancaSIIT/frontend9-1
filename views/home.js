@@ -27,10 +27,11 @@ function displayMoviesListHtml(data) {
     var posterElement = clonedElement.querySelector("img")
     posterElement.setAttribute("src", movie.Poster);
     listElement.appendChild(clonedElement);
-  clonedElement.id = movie._id;
+    clonedElement.id = movie._id;
 
   var deleteButton = clonedElement.querySelector(".delete");
-  if (deleteButton) {deleteButton.addEventListener("click", deleteMovie);}
+  deleteButton.addEventListener("click", deleteMovie);
+
      //
      // clonedElement.querySelectorAll(".delete").forEach(function(button){
      //   button.addEventListener("click", deleteMovie);
@@ -42,9 +43,6 @@ function displayMoviesListHtml(data) {
 }
 
 function deleteMovie(event) {
-  if (event.currentTarget !== event.target) {
-    return;
-  }
   var movie = movieFromEvent(event);
   movie.delete().then(function() {
     refreshMovieList();
@@ -53,15 +51,10 @@ function deleteMovie(event) {
 
 //this funtion can be used every time you need the id
 function movieFromEvent(event) {
-  var movieElement = movieElementFromEvent(event);
+  var movieElement = event.target.parentElement.parentElement.parentElement;
   var movieId = movieElement.id;
+  console.log("id=",movieId);
   return new Movie(movieId);
-}
-function movieElementFromEvent(event) {
-  // event.target is the element that we clicked
-  var movieElement = event.target.parentElement.parentElement;
-  return movieElement;
-
 }
 
 function refreshMovieList() {
