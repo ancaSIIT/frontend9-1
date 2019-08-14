@@ -1,6 +1,5 @@
 // Button Manager
 window.addEventListener('load', showButton)
-// $(window).load(showButton);
 
 function showButton() {
   if (localStorage.getItem("accessToken") !== null) {
