@@ -93,3 +93,26 @@ function getQueryValue(key) {
   }
   return false;
 }
+
+function deleteMovie(event) {
+  var movie = movieFromEvent(event);
+  movie.delete().then(function() {
+    refreshMovieList();
+  });
+}
+
+//this funtion can be used every time you need the id
+function movieFromEvent(event) {
+  var movieElement = event.target.parentElement.parentElement.parentElement;
+  var movieId = movieElement.id;
+  console.log("id=",movieId);
+  return new Movie(movieId);
+}
+
+function refreshMovieList() {
+  var movie = new Movie();
+
+  movie.getAll().then(function(data) {
+    displayMoviesListHtml(data.results);
+  });
+}

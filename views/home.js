@@ -29,16 +29,13 @@ function displayMoviesListHtml(data) {
     listElement.appendChild(clonedElement);
     clonedElement.id = movie._id;
 
-  var deleteButton = clonedElement.querySelector(".delete");
-  deleteButton.addEventListener("click", deleteMovie);
+    var deleteButton = clonedElement.querySelector(".delete");
+    deleteButton.addEventListener("click", deleteMovie);
 
      //
      // clonedElement.querySelectorAll(".delete").forEach(function(button){
      //   button.addEventListener("click", deleteMovie);
      // })
-
-
-
   }
 }
 

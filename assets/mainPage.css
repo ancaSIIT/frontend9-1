@@ -419,6 +419,7 @@ h1 ,h2 ,h3 ,h4 {
   position: relative;
   margin-top: 5px;
   margin-left: 10px;
+  padding-bottom: 2px; /* Needed for movieDetails */
   z-index: 1;
 }
 

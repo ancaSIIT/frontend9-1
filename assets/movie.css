@@ -8,12 +8,11 @@ body{
 .wrapper{
   background: linear-gradient(to top, #F37335, #FDC830);
   max-width: 1400px;
-  height: 750px;
+  min-height: 700px;
   position: relative;
   padding: 0 15px;
   margin: 90px auto 0;
   border: 2px solid black;
-
 }
 
 .titleDisplay{
