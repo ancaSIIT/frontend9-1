@@ -1,13 +1,9 @@
 var movie = new Movie();
-
-
-movie.getAll().then(function(data) {
-  console.log(data);
-  displayMoviesListHtml(data.results);
-});
+var currentPage = 1;
+var totalPages = 1;
 
 function displayMoviesListHtml(data) {
-  var listElement = document.getElementById("list-movies");
+  var listElement = document.querySelector("#list-movies .items");
   listElement.innerHTML = "";
   for (var i = 0; i < data.length; i++) {
     var movie = data[i];
@@ -31,11 +27,33 @@ function displayMoviesListHtml(data) {
 
     var deleteButton = clonedElement.querySelector(".delete");
     deleteButton.addEventListener("click", deleteMovie);
+  }
 
-     //
-     // clonedElement.querySelectorAll(".delete").forEach(function(button){
-     //   button.addEventListener("click", deleteMovie);
-     // })
+  var pagesElement = document.querySelector("#list-movies .pages");
+  pagesElement.innerHTML = "";
+  var prevPageElement = document.createElement("a");
+  prevPageElement.innerText = "<";
+  prevPageElement.addEventListener("click", () => goToPage(-1));
+  var nextPageElement = document.createElement("a");
+  nextPageElement.innerText = ">";
+  nextPageElement.addEventListener("click", () => goToPage(0));
+
+  if(currentPage != 1) {
+    pagesElement.appendChild(prevPageElement);
+  }
+
+  for(let i = 1; i <= totalPages; i++){
+    var pageLink = document.createElement("a");
+    pageLink.innerText = i;
+    if(currentPage == i){
+      pageLink.classList.add("active");
+    }
+    pageLink.addEventListener("click", () => goToPage(i));
+    pagesElement.appendChild(pageLink);
+  }
+
+  if(currentPage != totalPages) {
+    pagesElement.appendChild(nextPageElement);
   }
 }
 
@@ -57,7 +75,33 @@ function movieFromEvent(event) {
 function refreshMovieList() {
   var movie = new Movie();
 
-  movie.getAll().then(function(data) {
+  if(currentPage < 1){
+    currentPage = 1;
+  }
+  movie.getAll(currentPage).then(function(data) {
+    console.log(data);
+    if(currentPage > data.pagination.numberOfPages){
+      goToPage(data.pagination.numberOfPages);
+      return;
+    }
+    totalPages = data.pagination.numberOfPages;
     displayMoviesListHtml(data.results);
   });
 }
+
+function goToPage(page) {
+  switch (page) {
+    case -1:
+      currentPage = currentPage - 1;
+      break;
+    case 0:
+      currentPage = currentPage + 1;
+      break;
+    default:
+      currentPage = page;
+      break;
+  }
+  refreshMovieList();
+}
+
+refreshMovieList();

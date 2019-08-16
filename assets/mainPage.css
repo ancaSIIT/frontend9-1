@@ -394,6 +394,9 @@ h1 ,h2 ,h3 ,h4 {
 }
 
 #list-movies {
+}
+
+#list-movies .items{
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -418,6 +421,7 @@ h1 ,h2 ,h3 ,h4 {
   height: 35px;
   position: relative;
   margin-top: 5px;
+  margin-bottom: 15px;
   margin-left: 10px;
   padding-bottom: 2px; /* Needed for movieDetails */
   z-index: 1;
@@ -474,22 +478,18 @@ h1 ,h2 ,h3 ,h4 {
 
 /*PAGES*/
 .pages {
-  height: 50px;
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: black;
+  min-height: 50px;
+  margin: 10px 50px 0;
+  text-align: center;
 }
-.pagination{
-  margin:auto;
-  width: 205px;
-  padding-top: 15px;
-}
-.pagination a {
+.pages a {
+  border: 1px solid #000;
   color: white;
-  margin: auto;
-  width: 40px;
-  padding: 8px 16px;
+  margin: 0 2px;
+  padding: 4px 6px;
   text-decoration: none;
   transition: background-color .3s;
+}
+.pages a.active {
+  text-decoration: underline;
 }

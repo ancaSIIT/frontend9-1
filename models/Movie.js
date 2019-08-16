@@ -3,10 +3,15 @@ var baseUrl = "https://movies-api-siit.herokuapp.com";
 window.Movie = function Movie(id = "") {
   this.id = id;
 };
-Movie.prototype.getAll = function() {
-  return fetch(baseUrl + "/movies?take=10&skip=0").then(function(response) {
-    console.log("response", response);
 
+Movie.prototype.getAll = function(page = 1) {
+  page = parseInt(page);//convert page to integer nr
+  if(page < 1){
+    page = 1;
+  }
+  var itemsPerPage = 10;
+  var skip = (page - 1) * itemsPerPage;//computing number of items to skip
+  return fetch(baseUrl + "/movies?take=" + itemsPerPage + "&skip=" + skip).then(function(response) {
     if (response.ok) {
       return response.json();
     }
@@ -17,8 +22,6 @@ Movie.prototype.getAll = function() {
 
 Movie.prototype.get = function() {
   return fetch(baseUrl + "/movies/" + this._id).then(function(response) {
-    console.log("response", response);
-
     if (response.ok) {
       return response.json();
     }
