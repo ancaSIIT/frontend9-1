@@ -55,6 +55,8 @@ function displayMoviesListHtml(data) {
   if(currentPage != totalPages) {
     pagesElement.appendChild(nextPageElement);
   }
+
+  listElement.classList.remove("loading");
 }
 
 function deleteMovie(event) {
@@ -73,6 +75,8 @@ function movieFromEvent(event) {
 }
 
 function refreshMovieList() {
+  var listElement = document.querySelector("#list-movies .items");
+  listElement.classList.add("loading");
   var movie = new Movie();
 
   if(currentPage < 1){
