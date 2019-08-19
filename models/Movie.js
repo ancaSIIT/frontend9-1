@@ -63,3 +63,39 @@ Movie.prototype.delete = function() {
     }
   });
 };
+
+Movie.prototype.addMovieFromAPI = function (
+  newMovieTitle,
+  newMovieImage,
+  newMovieDate,
+  newMovieRuntime,
+  newMovieDirector,
+  newMovieWriter,
+  newMovieActors,
+  newMovieType,
+  newMovieCountry,
+  newMovieLanguage,
+  newMovieGenre
+) {
+  return fetch(baseUrl + "/movies", {
+      method: "POST",
+      body: JSON.stringify({
+        Title: newMovieTitle,
+        Year: newMovieDate,
+        imdbID: "12345",
+        Type: newMovieType,
+        Poster: newMovieImage
+      }),
+      headers: {
+          "Content-type": "application/json",
+          "x-auth-token": localStorage.getItem('accessToken')
+      }
+  }).then(function(response) {
+      console.log("Added", response);
+
+      if (response.ok) {
+          return response.json();
+      }
+      throw new Error("You need to be authenticated to be able to create a movie", response.status);
+  });
+};
