@@ -31,7 +31,6 @@
 
 .user-register > .image > #logoImg {
     width: 40%;
-    background-color: white;
     border-radius: 10%;
     margin: 5px;
 }
@@ -76,7 +75,7 @@
 .container-register > .registerBtn {
     font-family: 'Acme', sans-serif;
     font-size: 25px;
-    width: 96.5%;
+    width: 88%;
     margin: 10px;
     border: none;
     cursor: pointer;
