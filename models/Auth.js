@@ -2,7 +2,6 @@ var url = "https://movies-api-siit.herokuapp.com"
 var parameter = url + "/auth/register";
 var parameter2 = url + "/auth/login";
 var logoutURL = url + "/auth/logout";
-var addMovieURL = url + "/movie";
 
 function Auth() {}
 
@@ -61,22 +60,4 @@ Auth.prototype.logout = function() {
         }
         throw new Error("You have to be logged-in in order to log out", response.status);
     });
-};
-
-Auth.prototype.addMovie = function() {
-  return fetch(addMovieURL, {
-
-      headers: {
-          "x-auth-token": localStorage.getItem('accessToken')
-
-      }
-  }).then(function(response) {
-      console.log("Added", response);
-
-      if (response.ok) {
-          return response.json();
-
-      }
-      throw new Error("You need to be authenticated to be able to create a movie", response.status);
-  });
 };
