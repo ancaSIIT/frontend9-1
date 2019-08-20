@@ -71,11 +71,14 @@ Movie.prototype.addMovieFromAPI = function (
   newMovieRuntime,
   newMovieDirector,
   newMovieWriter,
+  newMovieAwards,
   newMovieActors,
   newMovieType,
   newMovieCountry,
   newMovieLanguage,
-  newMovieGenre
+  newMovieGenre,
+  newMovieRated,
+  newMovieDescription
 ) {
   return fetch(baseUrl + "/movies", {
       method: "POST",
@@ -84,7 +87,17 @@ Movie.prototype.addMovieFromAPI = function (
         Year: newMovieDate,
         imdbID: "12345",
         Type: newMovieType,
-        Poster: newMovieImage
+        Poster: newMovieImage,
+        Runtime: newMovieRuntime,
+        Director: newMovieDirector,
+        Writer: newMovieWriter,
+        Awards: newMovieAwards,
+        Actors: newMovieActors,
+        Country: newMovieCountry,
+        Language: newMovieLanguage,
+        Genre: newMovieGenre,
+        Rated: newMovieRated,
+        Description: newMovieDescription
       }),
       headers: {
           "Content-type": "application/json",
