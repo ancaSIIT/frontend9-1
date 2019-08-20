@@ -1,8 +1,9 @@
 //Problems:
-//1. The submit button adds movies eventhough the fields are empty
-//2. The add movie modal cannot be closed, only if you click on submit
+//1. The submit button adds movies even though the fields are empty
+
 //3. Once you submit a movie you cannot add another movie, only if you reload the page
 //4. The following inputs are not working : image, type, genre, description, release date
+//5. The grey background on the modal does not applied (Line 1 addMovie.css)
 
 
 var addButton = document.querySelector('#add-movie');
@@ -12,13 +13,20 @@ addButton.addEventListener("click", function () {
   populateModalFields();
 })
 
+var newMovieModal = document.querySelector('.add-movie-modal');
+//close the modal if the "cancel" button is clicked
+var cancelNewMovieBtn = document.querySelector(".cancel-new-movie-btn");
+cancelNewMovieBtn.onclick = function () {
+  newMovieModal.style.display = "none";
+}
+
 // var addMovie = document.querySelector(".add-movie-modal");
 
-// document.querySelector(".add-movie-modal").addEventListener("click", function (event) {
-//     if (event.target == addMovie) {
-//         addMovie.style.display = "none";
-//     }
-// })
+document.querySelector(".add-movie-modal").addEventListener("click", function (event) {
+    if (event.target == newMovieModal) {
+      newMovieModal.style.display = "none";
+    }
+})
 
 // Shouldn't addMovie be a prototype of Movie instead of Auth? no idea..
 
