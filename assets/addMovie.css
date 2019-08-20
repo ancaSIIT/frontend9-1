@@ -72,11 +72,12 @@
     margin: 15px;
 }
 
-.add-new-movie >.submit-new-movie-btn{
+.add-new-movie >.submit-new-movie-btn,
+                .cancel-new-movie-btn{
+    display: inline-block;
     font-family: 'Acme', sans-serif;
     font-size: 16px;
     width: 15%;
-    margin-left: 250px;
     border: none;
     cursor: pointer;
     padding: 10px 15px;
@@ -84,8 +85,15 @@
     color: #e67300;
 }
 
+.add-new-movie >.submit-new-movie-btn {
+    margin-left: 180px;
+}
 .add-new-movie >.submit-new-movie-btn:hover {
     opacity: 0.8;
+}
+
+.add-new-movie >.cancel-new-movie-btn {
+    margin-left: 30px;
 }
 
 /* Add Zoom Animation */
