@@ -1,0 +1,40 @@
+.container {
+  background: linear-gradient(to top, #F7AF31, black, black);
+  height: 1600px;
+}
+.content {
+  width: 1400px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 120px;
+  background: linear-gradient(to top, #F37335, #FDC830);
+  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  width: 33.3%;
+  height: 700px;
+  border: 1px solid black;
+}
+.col > img {
+  border: 1px solid black;
+  width: 70%;
+  height: 80%;
+  margin-left: 15%;
+  margin-top: 5%;
+  box-shadow: -1px 20px 30px 1px black;
+}
+.col > span {
+  display: block;
+  margin-top: 5%;
+  margin-left: 25%;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  width: 50%;
+
+}

@@ -116,3 +116,35 @@ function refreshMovieList() {
     displayMoviesListHtml(data.results);
   });
 }
+
+var editButton = document.querySelector(".edit");
+    editButton.addEventListener("click", function(){
+
+ var editMovie = new Movie(event);
+ var edited = movieFromEvent(event);
+ var inputElement = document.createElement("input");
+ var labelElement = document.createElement("label");
+  labelElement.innerHTML = "Title: ";
+  document.body.appendChild(labelElement);
+  document.body.appendChild(inputElement);
+ var saveElement = document.createElement("button");
+  saveElement.innerHTML = "Submit";
+    document.body.appendChild(saveElement);
+    saveElement.addEventListener("click", function(clickSaveEvent) {
+ var titleValue = inputElement.value;
+    console.log("save", event);
+
+  editMovie.edit( movieId,titleValue).then(function(data) {
+            console.log("edited", data);
+            document.querySelector(".title").innerHTML = data.title;
+  inputElement.remove(inputElement);
+  labelElement.remove(labelElement);
+  saveElement.remove(saveElement);
+  location.reload();
+      }).catch(function(response) {
+          if(response.status=400) {
+                alert('Nothing to update');
+          }
+      });
+});
+})

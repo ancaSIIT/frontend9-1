@@ -72,11 +72,14 @@ Movie.prototype.addMovieFromAPI = function (
   newMovieRuntime,
   newMovieDirector,
   newMovieWriter,
+  newMovieAwards,
   newMovieActors,
   newMovieType,
   newMovieCountry,
   newMovieLanguage,
-  newMovieGenre
+  newMovieGenre,
+  newMovieRated,
+  newMovieDescription
 ) {
   return fetch(baseUrl + "/movies", {
       method: "POST",
@@ -85,7 +88,17 @@ Movie.prototype.addMovieFromAPI = function (
         Year: newMovieDate,
         imdbID: "12345",
         Type: newMovieType,
-        Poster: newMovieImage
+        Poster: newMovieImage,
+        Runtime: newMovieRuntime,
+        Director: newMovieDirector,
+        Writer: newMovieWriter,
+        Awards: newMovieAwards,
+        Actors: newMovieActors,
+        Country: newMovieCountry,
+        Language: newMovieLanguage,
+        Genre: newMovieGenre,
+        Rated: newMovieRated,
+        Description: newMovieDescription
       }),
       headers: {
           "Content-type": "application/json",
@@ -100,6 +113,7 @@ Movie.prototype.addMovieFromAPI = function (
       throw new Error("You need to be authenticated to be able to create a movie", response.status);
   });
 };
+<<<<<<< HEAD
 Movie.prototype.getMoviesAfterTitle = function(){
   var searchBar=document.getElementById("search-bar");
   var inputValue=searchBar.value;
@@ -111,3 +125,25 @@ Movie.prototype.getMoviesAfterTitle = function(){
       throw new Error("A network error occured", response.status);
     });
   };
+=======
+
+Movie.prototype.edit = function(movieId, titleValue) {
+
+ return fetch( baseUrl + "/movies/" +  movieId, {
+    method: "PUT",
+    body: JSON.stringify({
+      Title: titleValue
+    }),
+    headers: {
+        "Content-type": "application/json",
+        "x-auth-token": localStorage.getItem('accessToken')
+    }
+    }).then(function(response) {
+      console.log("edited", response);
+      if (response.ok) {
+          return response.json();
+      }
+  throw new Error("Nothing to update", response.status);
+});
+}
+>>>>>>> bfa00596ddabbce477b585729cfc219c546222c5

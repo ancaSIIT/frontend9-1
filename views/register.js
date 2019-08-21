@@ -3,7 +3,7 @@ var modalreg = document.getElementById('display-modal-register');
 
 // Close modal functionality
 document.getElementById('display-modal-register').addEventListener("click", function(event) {
-    if(event.target == modal) {
+    if(event.target == modalreg) {
         modalreg.style.display = "none";
     }
 })
