@@ -125,18 +125,6 @@ Movie.prototype.getMoviesAfterTitle = function(){
       throw new Error("A network error occured", response.status);
     });
   };
-  Movie.prototype.getMoviesAfterTitle = function(){
-var checkbox = document.querySelectorAll("input[type=checkbox]")
-    var genrevalue=checkbox.value;
-    return fetch(baseUrl + "/movies?Genre=" + this.genreValue)
-    .then(function(response) {
-        if (response.ok) {
-          return response.json();
-        }
-
-        throw new Error("A network error occured", response.status);
-      });
-    };
 
 
 Movie.prototype.edit = function(movieId, titleValue) {
