@@ -16,7 +16,8 @@ cancelreg.onclick = function(event) {
 var register = document.querySelector(".registerBtn");
 
 // Register Implementation
-register.addEventListener("click", function() {
+register.addEventListener("click", function(event) {
+  event.preventDefault();
   var username = document.getElementById("username-register").value;
   var password = document.getElementById("password-register").value;
   var password2 = document.getElementById("password-register2").value;
