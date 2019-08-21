@@ -18,7 +18,8 @@ var listElement = document.querySelector("#list-movies .items");
 listElement.innerHTML = "";
 if (data.results.length==0){
   var noResultsMessage=document.getElementById("no-search-results");
-  noResultsMessage.innerText= `Oh, sorry! :( There is no  movie with  ${inputValue} in the title :( Try an other one!`
+  noResultsMessage.innerText= `Oh, sorry! :( There is no  movie with  ${inputValue} in the title
+     Try an other one!`
 }
 else {
 var noResultsMessage=document.getElementById("no-search-results");
