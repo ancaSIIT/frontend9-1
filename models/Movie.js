@@ -112,3 +112,23 @@ Movie.prototype.addMovieFromAPI = function (
       throw new Error("You need to be authenticated to be able to create a movie", response.status);
   });
 };
+
+Movie.prototype.edit = function(movieId, titleValue) {
+
+ return fetch( baseUrl + "/movies/" +  movieId, {
+    method: "PUT",
+    body: JSON.stringify({
+      Title: titleValue
+    }),
+    headers: {
+        "Content-type": "application/json",
+        "x-auth-token": localStorage.getItem('accessToken')
+    }
+    }).then(function(response) {
+      console.log("edited", response);
+      if (response.ok) {
+          return response.json();
+      }
+  throw new Error("Nothing to update", response.status);
+});
+}
