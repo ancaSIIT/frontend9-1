@@ -1,0 +1,119 @@
+.edit-movie-modal {
+  font-family: "Acme", sans-serif;
+display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* background-color: rgb(0, 0, 0); /* Fallback color */
+  /* background-color: rgba(0, 0, 0, 0.3); /* Black w/ opacity */ */ */
+  padding-top: 10px;
+}
+
+.edit-new-movie {
+  font-family: "Acme", sans-serif;
+  border: 1px solid Black;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  width: 600px;
+  height: 1600px;
+  background-color: #f7b228;
+  margin-left: 58%;
+}
+
+.edit-new-movie > .image {
+  text-align: center;
+  position: relative;
+  margin: 20px 0 15px 0;
+}
+
+.container-edit-movie > input {
+  width: 90%;
+  padding: 10px 20px;
+  margin: 15px;
+  display: inline-block;
+  border: 1px solid #ccc;
+}
+
+.container-edit-movie > label {
+  margin: 15px;
+}
+
+.newImage {
+  margin: 15px;
+}
+
+.newImage > input {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.newImage > .submit-image-btn {
+  font-family: "Acme", sans-serif;
+  font-size: 12px;
+  width: auto;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #e67300;
+  border: none;
+  cursor: pointer;
+  margin-left: 30px;
+  margin-top: 50px;
+}
+
+.newImage > .submit-image-btn:hover {
+  opacity: 0.8;
+}
+
+.container-edit-movie > .radio-btn {
+  margin: 15px;
+}
+
+.edit-new-movie > .submit-edit-movie-btn,
+                .cancel-edit-movie-btn {
+  font-family: "Acme", sans-serif;
+  font-size: 16px;
+  width: 15%;
+  margin-left: 250px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #e67300;
+}
+
+.add-new-movie >.submit-new-movie-btn {
+    margin-left: 180px;
+}
+.edit-new-movie > .submit-edit-movie-btn:hover {
+  opacity: 0.8;
+}
+
+.edit-new-movie >.cancel-edit-movie-btn {
+    margin-left: 30px;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
