@@ -513,3 +513,11 @@ h1 ,h2 ,h3 ,h4 {
 .pages a.active {
   text-decoration: underline;
 }
+/*If no search results are  found*/
+#no-search-results{
+  text-align: center;
+  color: white;
+  padding-top: 50px;
+
+
+}

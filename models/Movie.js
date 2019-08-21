@@ -1,4 +1,5 @@
 var baseUrl = "https://movies-api-siit.herokuapp.com";
+inputValue=
 
 window.Movie = function Movie(id = "") {
   this.id = id;
@@ -99,3 +100,14 @@ Movie.prototype.addMovieFromAPI = function (
       throw new Error("You need to be authenticated to be able to create a movie", response.status);
   });
 };
+Movie.prototype.getMoviesAfterTitle = function(){
+  var searchBar=document.getElementById("search-bar");
+  var inputValue=searchBar.value;
+  return fetch(baseUrl + "/movies?Title=" + inputValue).then(function(response) {
+      if (response.ok) {
+        return response.json();
+      }
+
+      throw new Error("A network error occured", response.status);
+    });
+  };
