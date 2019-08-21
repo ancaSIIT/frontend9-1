@@ -4,7 +4,7 @@ var movie = new Movie(movieId);
 
 movie.getDetails().then(function(movie) {displayMovieDetails(movie);});
 
-ffunction displayMovieDetails(data){
+function displayMovieDetails(data){
   console.log(data);
   var title = document.querySelector(".title");
   var movieTitle = document.querySelector("#movieTitle");
