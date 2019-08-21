@@ -113,7 +113,7 @@ Movie.prototype.addMovieFromAPI = function (
       throw new Error("You need to be authenticated to be able to create a movie", response.status);
   });
 };
-<<<<<<< HEAD
+
 Movie.prototype.getMoviesAfterTitle = function(){
   var searchBar=document.getElementById("search-bar");
   var inputValue=searchBar.value;
@@ -125,7 +125,19 @@ Movie.prototype.getMoviesAfterTitle = function(){
       throw new Error("A network error occured", response.status);
     });
   };
-=======
+  Movie.prototype.getMoviesAfterTitle = function(){
+var checkbox = document.querySelectorAll("input[type=checkbox]")
+    var genrevalue=checkbox.value;
+    return fetch(baseUrl + "/movies?Genre=" + this.genreValue)
+    .then(function(response) {
+        if (response.ok) {
+          return response.json();
+        }
+
+        throw new Error("A network error occured", response.status);
+      });
+    };
+
 
 Movie.prototype.edit = function(movieId, titleValue) {
 
@@ -146,4 +158,3 @@ Movie.prototype.edit = function(movieId, titleValue) {
   throw new Error("Nothing to update", response.status);
 });
 }
->>>>>>> bfa00596ddabbce477b585729cfc219c546222c5
