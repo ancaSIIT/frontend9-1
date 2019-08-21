@@ -126,23 +126,51 @@ Movie.prototype.getMoviesAfterTitle = function(){
     });
   };
 
+  Movie.prototype.edit = function(movieId,
+    titleValue,
+    yearValue,
+    releaseValue,
+    descriptionValue,
+    typeValue,
+    imageValue,
+    runtimeValue,
+    directorValue,
+    writerValue,
+    awardsValue,
+    actorsValue,
+    countryValue,
+    languageValue,
+    genreValue,
+    ratedValue) {
 
-Movie.prototype.edit = function(movieId, titleValue) {
-
- return fetch( baseUrl + "/movies/" +  movieId, {
-    method: "PUT",
-    body: JSON.stringify({
-      Title: titleValue
-    }),
-    headers: {
-        "Content-type": "application/json",
-        "x-auth-token": localStorage.getItem('accessToken')
-    }
-    }).then(function(response) {
-      console.log("edited", response);
-      if (response.ok) {
-          return response.json();
+   return fetch( baseUrl + "/movies/" +  movieId, {
+      method: "PUT",
+      body: JSON.stringify({
+        Title: titleValue,
+        Year: yearValue,
+        Released: releaseValue,
+        Plot: descriptionValue,
+        Type: typeValue,
+        Poster: imageValue,
+        Runtime: runtimeValue,
+        Director: directorValue,
+        Writer: writerValue,
+        Awards: awardsValue,
+        Actors: actorsValue,
+        Country: countryValue,
+        Language: languageValue,
+        Genre: genreValue,
+        Rated: ratedValue
+      }),
+      headers: {
+          "Content-type": "application/json",
+          "x-auth-token": localStorage.getItem('accessToken')
       }
-  throw new Error("Nothing to update", response.status);
-});
-}
+      }).then(function(response) {
+        console.log("edited", response);
+        if (response.ok) {
+            return response.json();
+        }
+    throw new Error("Nothing to update", response.status);
+  });
+  }
