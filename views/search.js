@@ -21,6 +21,8 @@ if (data.results.length==0){
   noResultsMessage.innerText= `Oh, sorry! :( There is no  movie with  ${inputValue} in the title :( Try an other one!`
 }
 else {
+var noResultsMessage=document.getElementById("no-search-results");
+noResultsMessage.innerText="";
 for (var i = 0; i < data.results.length; i++) {
   var movie = data.results[i];
 
