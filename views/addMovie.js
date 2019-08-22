@@ -68,7 +68,7 @@ function populateModalFields() {
       var newMovieType = document.querySelector('input[name="movieType"]:checked').value;
       var newMovieCountry = movieCountry.value;
       var newMovieLanguage = movieLanguage.value;
-      var newMovieGenre = movieGenre.selectedOptions.length > 0 ? movieGenre.selectedOptions[0].value : "Action";
+      var newMovieGenre = movieGenre.selectedOptions.length > 0 ? movieGenre.selectedOptions[0].value : "Action&Adventure";
       var newMovieRated = movieRated.value;
       var newMoviePlot = moviePlot.value;
 
