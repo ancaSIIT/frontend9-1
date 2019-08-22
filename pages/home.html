@@ -40,9 +40,8 @@
         <a href="home.html"><img src="../assets/pictures/logo.png"alt=""> </a>
         <ul>
           <li><a href="home.html">HOME</a></li>
-          <li><a href="#">MOVIES</a></li>
-          <li><a href="#">TV SERIES</a></li>
-          <li><a href="#">ABOUT</a></li>
+          <li><a href="news.html">NEWS</a></li>
+          <li><a href="creators.html">CREATORS</a></li>
         </ul>
         <div class="cover"></div>
         <div class="search-container">
@@ -103,7 +102,9 @@
         </div>
         <!-----CONTENT---->
 
-        <div id="template">
+         <!-----CONTENT---->
+
+         <div id="template">
           <div class="title-poster">
             <a target="_blank">
               <img class="poster-element" alt="IMG MOVIE HERE">
@@ -111,13 +112,32 @@
             <div class="middle">
               <h3 class="title-element"></h3>
             </div>
+            <div class="delete-movie">
+              <button class="delete"></button>
+              <i class="far fa-times-circle"></i>
+            </div>
           </div>
-          <div class="movie-options same-effect">
-            <button class="delete"><span>DELETE</span></button>
+          <div class="rating-system">
+            <div id="full-size-star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div id="half-size-star">
+              <i class="fas fa-star-half-alt"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
           </div>
         </div>
         <div id="list-movies">
-          <div class="items loading"></div>
+          <h2 id="no-search-results"><h2>
+          <div class="items loading">
+          </div>
           <!---PAGES--->
           <div class="pages"></div>
         </div>
@@ -272,6 +292,9 @@
   <script src="../views/Login.js"></script>
   <script src="../views/logout.js"></script>
   <script src="../views/addMovie.js"></script>
+  <script src="../views/search.js"></script>
+  <script src="../views/filter.js"></script>
+
 </body>
 
 </html>
