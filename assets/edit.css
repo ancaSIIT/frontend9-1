@@ -1,3 +1,6 @@
+body {
+    color: black;
+}
 .edit-movie-modal {
   font-family: "Acme", sans-serif;
   display: none;
@@ -8,17 +11,19 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  padding-top: 10px;
+  /* padding-top: 1%; */
+  padding-bottom: 1%;
 }
 
 .edit-new-movie {
   font-family: "Acme", sans-serif;
   border: 1px solid Black;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-  width: 600px;
-  height: 240%;
-  background-color: #f7b228;
-  margin-left: 58%;
+  width: 40%;
+  height: 223%;
+  background: linear-gradient(to top, #F37335, #FDC830);
+  margin-left: 57%;
+
 }
 
 .edit-new-movie > .image {
@@ -39,79 +44,27 @@
   margin: 15px;
 }
 
-.newImage {
-  margin: 15px;
+.edit-new-movie >.submit-edit-movie-btn,
+                .cancel-edit-movie-btn{
+    display: inline-block;
+    font-family: 'Acme', sans-serif;
+    font-size: 16px;
+    width: 20%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #e67300;
 }
 
-.newImage > input {
-  border: 1px solid #ccc;
-  padding: 10px;
+.edit-new-movie >.submit-edit-movie-btn {
+    margin-left: 25%;
 }
-.newImage > .submit-image-btn {
-  font-family: "Acme", sans-serif;
-  font-size: 12px;
-  width: auto;
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #e67300;
-  border: none;
-  cursor: pointer;
-  margin-left: 30px;
-  margin-top: 50px;
-}
-
-.newImage > .submit-image-btn:hover {
-  opacity: 0.8;
-}
-
-.container-edit-movie > .radio-btn {
-  margin: 15px;
-}
-
-.edit-new-movie > .submit-edit-movie-btn,
-                .cancel-edit-movie-btn {
-  font-family: "Acme", sans-serif;
-  font-size: 16px;
-  width: 15%;
-  margin-left: 250px;
-  border: none;
-  cursor: pointer;
-  padding: 10px 15px;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #e67300;
-}
-
-.add-new-movie >.submit-new-movie-btn {
-    margin-left: 180px;
-}
-.edit-new-movie > .submit-edit-movie-btn:hover {
-  opacity: 0.8;
+.edit-new-movie >.submit-edit-movie-btn:hover {
+    opacity: 0.8;
 }
 
 .edit-new-movie >.cancel-edit-movie-btn {
-    margin-left: 30px;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s;
-}
-
-@-webkit-keyframes animatezoom {
-  from {
-    -webkit-transform: scale(0);
-  }
-  to {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes animatezoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
+    margin-left: 10%;
 }
