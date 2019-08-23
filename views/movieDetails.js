@@ -109,6 +109,8 @@ function displayMovieDetails(data){
   characteristics.appendChild(ratedValue);
   var description = document.querySelector(".description");
   description.innerHTML = data.Plot;
+  var movieDescription = document.querySelector("#movieDescription");
+  movieDescription.value = data.Plot;
 }
 function getQueryValue(key) {
   var query = window.location.search.substring(1);
@@ -165,7 +167,8 @@ var editButton = document.querySelector("#edit");
        //Cancel
        var cancelEdit = document.querySelector(".cancel-edit-movie-btn");
        cancelEdit.onclick = function(event) {
-           editMovieModal.style.display = "none";
+       location.reload()
+       editMovieModal.style.display = "none";
 
        };
 
