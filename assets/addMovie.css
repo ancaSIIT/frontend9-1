@@ -9,17 +9,16 @@
     height: 100%;
     overflow: auto;
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
     padding-top: 10px;
 }
-
 
 .add-new-movie {
     font-family: 'Acme', sans-serif;
     border: 1px solid #e67300;
     box-shadow: 2px 2px  rgba(0, 0, 0,0.5);
     width: 600px;
-    height: 1500px;
+    height: auto;
     background-color:#f7b228;
     margin: 50px auto 0 auto;
 }
@@ -43,24 +42,35 @@
 }
 
 .newImage {
-    margin: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 15px;
 }
 
+.newImage > label {
+  padding: 10px;
+}
 .newImage > input {
     border: 1px solid #ccc;
     padding: 10px;
+    margin-bottom: 60px;
+    overflow: hidden;
 }
+
 .newImage > .submit-image-btn {
     font-family: 'Acme', sans-serif;
-    font-size: 12px;
-    width: auto;
-    padding: 10px 20px;
+    font-size: 22px;
+    width: 80%;
+    padding: 8px 12px;
     background-color: rgba(0, 0, 0, 0.9);
     color: #e67300;
     border: none;
     cursor: pointer;
-    margin-left: 30px;
-    margin-top: 50px;
+    margin-left: 10px;
+    margin-top: -40px;
 
 }
 
@@ -72,7 +82,7 @@
     margin: 15px;
 }
 
-.add-new-movie >.submit-new-movie-btn,
+.container-add-movie >.submit-new-movie-btn,
                 .cancel-new-movie-btn{
     display: inline-block;
     font-family: 'Acme', sans-serif;
@@ -85,15 +95,17 @@
     color: #e67300;
 }
 
-.add-new-movie >.submit-new-movie-btn {
+.container-add-movie >.submit-new-movie-btn {
     margin-left: 180px;
+    margin-bottom: 10px;
 }
-.add-new-movie >.submit-new-movie-btn:hover {
+.container-add-movie e >.submit-new-movie-btn:hover {
     opacity: 0.8;
 }
 
-.add-new-movie >.cancel-new-movie-btn {
+.container-add-movie >.cancel-new-movie-btn {
     margin-left: 30px;
+    margin-bottom: 10px;
 }
 
 /* Add Zoom Animation */
@@ -101,13 +113,49 @@
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
   }
-  
+
   @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
+    from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
   }
-    
+
   @keyframes animatezoom {
-    from {transform: scale(0)} 
+    from {transform: scale(0)}
     to {transform: scale(1)}
   }
+
+/* Responsiveness */
+
+
+@media screen and (max-width: 1385px) {
+  .add-new-movie {
+    width: 450px;
+  }
+
+  .container-add-movie >.submit-new-movie-btn,
+                        .cancel-new-movie-btn {
+    margin-left: 130px;
+  }
+}
+
+@media screen and (max-width: 985px) {
+  .add-new-movie {
+    width: 300px;
+  }
+  .container-add-movie >.submit-new-movie-btn,
+                        .cancel-new-movie-btn {
+    margin-left: 65px;
+    font-size: 14px;
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .add-new-movie {
+    width: 200px;
+  }
+
+  .container-add-movie > .cancel-new-movie-btn {
+    margin-left: 65px;
+  }
+}

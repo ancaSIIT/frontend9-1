@@ -122,3 +122,26 @@
     from {transform: scale(0)}
     to {transform: scale(1)}
   }
+
+/* Responsiveness */
+@media screen and (max-width: 985px) {
+  .user-login {
+    width: 400px;
+    height: 550px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  .user-login {
+    width: 300px;
+    height: 550px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .user-login {
+    width: 270px;
+    height: 560px;
+  }
+}
