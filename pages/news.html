@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../assets/mainPage.css">
   <link rel="stylesheet" href="../assets/news.css">
+  <link rel="stylesheet" href="../assets/register.css">
+  <link rel="stylesheet" href="../assets/login.css">
   <link href="https://fonts.googleapis.com/css?family=Acme|Playfair+Display|Roboto+Condensed|Roboto+Slab|Ubuntu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -28,9 +30,9 @@
         </div>
 
         <div class="authentification same-effect">
-          <button id="add-game"><span>ADD GAME</span></button>
-          <button onclick="document.getElementById('display-modal-register').style.display='block'" style="width:auto"><span>REGISTER</span></button>
-          <button onclick="document.getElementById('display-modal-login').style.display='block'" style="width:auto"><span>LOGIN</span></button>
+          <button id=registerBtn onclick="document.getElementById('display-modal-register').style.display='block'" style="width:auto"><span>REGISTER</span></button>
+          <button id=loginBtn onclick="document.getElementById('display-modal-login').style.display='block'" style="width:auto"><span>LOGIN</span></button>
+          <button id=logoutBtn style="display:none;" style="width:auto"><span>LOGOUT</span></button>
         </div>
       </div>
       <div class="menu">
@@ -39,7 +41,7 @@
           <li><a href="home.html">HOME</a></li>
           <li><a href="news.html">NEWS</a></li>
           <li><a href="creators.html">CREATORS</a></li>
-        
+
         </ul>
         <div class="cover"></div>
         <div class="search-container">
@@ -57,6 +59,74 @@
 
     </div>
   </div>
+  <!-- REGISTER -->
+  <div id="display-modal-register" class="modal-register">
+    <form class="user-register animate">
+
+      <div class="image">
+        <img src="../assets/pictures/logo.png" alt="logo" id="logoImg">
+      </div>
+
+      <div class="container-register">
+        <label for="username" id="user">Username</label>
+        <input type="text" id="username-register" placeholder="Enter Username" name="username" required>
+
+        <label for="password" id="pass">Password</label>
+        <input type="password" id="password-register" placeholder="Enter Password" name="password" required>
+
+        <label for="password" id="rpass">Repeat Password</label>
+        <input type="password" id="password-register2" placeholder="Enter Password" name="password" required>
+
+        <button type="submit" class="registerBtn">Register</button>
+
+        <p id="status"></p>
+        <span>Already have an account? <a href="login.html">Sign in!</a></span>
+
+        <div class="cancel-register">
+          <button type="button" class="cancel-reg-btn">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- LOGIN -->
+
+
+  <div id="display-modal-login" class="modal-login">
+    <form class="user-login animate">
+      <div class="image">
+        <img src="../assets/pictures/logo.png" alt="logo" id="logoImg">
+      </div>
+
+      <div>
+        <div class="container-login">
+          <label for="username" id="user">Username</label>
+          <input type="text" id="userName-login" placeholder="Enter Username" name="username" required>
+
+          <label for="password" id="pass">Password</label>
+          <input type="password" id="passWord-login" placeholder="Enter Password" name="password" required>
+
+          <button type="submit" class="submit-btn">Login</button> <br>
+          <label id="checkbox">
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+      </div>
+
+      <p id="confirm"></p>
+
+      <div class="cancel-login">
+        <button type="button" class="cancel-login-btn">Cancel</button>
+        <span>Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+
+  <script src="../views/helpers.js"></script>
+  <script src="../models/Auth.js"></script>
+  <script src="../views/register.js"></script>
+  <script src="../views/Login.js"></script>
+  <script src="../views/logout.js"></script>
 </body>
 
 </html>
