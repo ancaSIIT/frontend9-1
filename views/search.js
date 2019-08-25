@@ -9,6 +9,8 @@ searchBar.addEventListener("keyup", function(event) {
   })
 var searchButton=document.getElementById("search-button");
 searchButton.addEventListener("click", function(){
+  refreshMovieList();
+  /*
   var inputValue=searchBar.value;
 
       console.log(inputValue);
@@ -46,4 +48,5 @@ for (var i = 0; i < data.results.length; i++) {
       }
     }
   })
+  */
 });

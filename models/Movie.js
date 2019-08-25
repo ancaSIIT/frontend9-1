@@ -5,14 +5,21 @@ window.Movie = function Movie(id = "") {
   this.id = id;
 };
 
-Movie.prototype.getAll = function(page = 1) {
+Movie.prototype.getAll = function(page = 1, flters) {
   page = parseInt(page);//convert page to integer nr
   if(page < 1){
     page = 1;
   }
   var itemsPerPage = 10;
   var skip = (page - 1) * itemsPerPage;//computing number of items to skip
-  return fetch(baseUrl + "/movies?take=" + itemsPerPage + "&skip=" + skip).then(function(response) {
+  var filterParameters = '';
+  if (filters.genre !== '') {
+    filterParameters += '&Genre=' + filters.genre;
+  }
+  if (filters.search !== '') {
+    filterParameters += '&Title=' + filters.search;
+  }
+  return fetch(baseUrl + "/movies?take=" + itemsPerPage + "&skip=" + skip + filterParameters).then(function(response) {
     if (response.ok) {
       return response.json();
     }
@@ -113,7 +120,7 @@ Movie.prototype.addMovieFromAPI = function (
       throw new Error("You need to be authenticated to be able to create a movie", response.status);
   });
 };
-
+/*
 Movie.prototype.getMoviesAfterTitle = function(){
   var searchBar=document.getElementById("search-bar");
   var inputValue=searchBar.value;
@@ -125,7 +132,7 @@ Movie.prototype.getMoviesAfterTitle = function(){
       throw new Error("A network error occured", response.status);
     });
   };
-
+*/
   Movie.prototype.edit = function(movieId,
     titleValue,
     yearValue,
