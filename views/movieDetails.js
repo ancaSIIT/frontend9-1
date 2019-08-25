@@ -167,8 +167,7 @@ var editButton = document.querySelector("#edit");
        //Cancel
        var cancelEdit = document.querySelector(".cancel-edit-movie-btn");
        cancelEdit.onclick = function(event) {
-       location.reload()
-       editMovieModal.style.display = "none";
+           editMovieModal.style.display = "none";
 
        };
 
