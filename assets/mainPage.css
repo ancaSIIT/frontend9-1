@@ -428,6 +428,10 @@ h1 ,h2 ,h3 ,h4 {
   font-size: 1.2em;
 }
 
+#list-movies #no-search-results{
+  width: 1110px;
+}
+
 #list-movies .items{
   position: relative;
   display: flex;
@@ -644,10 +648,15 @@ h1 ,h2 ,h3 ,h4 {
       top: 670px;
     }
 
+    #list-movies #no-search-results{
+      width: 800px;
+      margin-top: 90px;
+    }
+
     #list-movies .items {
       width: 800px;
       margin-left: 30px;
-      margin-top: 0;
+      margin-top: 90px;
     }
 
      .poster-element {
@@ -728,10 +737,13 @@ h1 ,h2 ,h3 ,h4 {
       top: 690px;
     }
 
+    #list-movies #no-search-results{
+      width: 650px;
+    }
+
     #list-movies .items {
       width: 650px;
       margin-left: 85px;
-      margin-top: 0;
       min-height: 700px;
     }
 
@@ -859,11 +871,14 @@ h1 ,h2 ,h3 ,h4 {
     width: 450px;
   }
 
+  #list-movies #no-search-results{
+    width: 450px;
+  }
+
   #list-movies .items {
     width: 450px;
     min-height: 1500px;
     margin-left: 20px;
-    margin-top: 0;
   }
 
    .poster-element {
@@ -959,7 +974,6 @@ h1 ,h2 ,h3 ,h4 {
   }
 
   #no-search-results {
-    margin-left: -85px;
     font-size: 0.8em;
   }
 
@@ -991,11 +1005,14 @@ h1 ,h2 ,h3 ,h4 {
     width: 350px;
   }
 
+  #list-movies #no-search-results{
+    width: 350px;
+  }
+
   #list-movies .items {
     width: 350px;
     min-height: 1500px;
     margin-left: 20px;
-    margin-top: 0;
   }
 
    .poster-element {
@@ -1246,9 +1263,13 @@ h1 ,h2 ,h3 ,h4 {
   }
 
   #no-search-results {
-    margin-left: -10px;
     font-size: 0.8em;
     padding: 0;
+  }
+
+  #list-movies #no-search-results{
+    width: 200px;
+    margin-top: 30px;
   }
 
   #list-movies .items {

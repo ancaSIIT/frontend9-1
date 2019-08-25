@@ -12,12 +12,16 @@ function displayMoviesListHtml(data) {
   var pagesElement = document.querySelector("#list-movies .pages");
   pagesElement.innerHTML = "";
   if (data.length == 0){
+    listElement.style.display = "none";
     var noResultsMessage=document.getElementById("no-search-results");
     noResultsMessage.innerText= `Oh, sorry! :( There is no  movie with  '${filters.search}' in the title
        Try another one!`;
+    noResultsMessage.style.display = "block";
   }
   else {
+    listElement.style.removeProperty("display");
     var noResultsMessage=document.getElementById("no-search-results");
+    noResultsMessage.style.display = "none";
     noResultsMessage.innerText="";
       for (var i = 0; i < data.length; i++) {
         var movie = data[i];
