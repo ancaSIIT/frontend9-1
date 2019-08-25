@@ -27,15 +27,16 @@ Movie.prototype.getAll = function(page = 1, flters = {genre:"", search:""}) {
   });
 };
 
-Movie.prototype.get = function() {
-  return fetch(baseUrl + "/movies/" + this._id).then(function(response) {
-    if (response.ok) {
-      return response.json();
-    }
-
-    throw new Error("A network error occured", response.status);
-  });
-};
+// Movie.prototype.get = function() {
+//   return fetch(baseUrl + "/movies/" + this._id).then(function(response) {
+//     if (response.ok) {
+//       return response.json();
+//     }
+//
+//     throw new Error("A network error occured", response.status);
+//   });
+// };
+// not used, if needed use getDetails
 
 Movie.prototype.getDetails = function() {
   var currentMovie = this;
