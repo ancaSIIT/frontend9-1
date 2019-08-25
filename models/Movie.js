@@ -74,8 +74,11 @@ Movie.prototype.delete = function() {
 
 Movie.prototype.addMovieFromAPI = function (
   newMovieTitle,
+  newMovieYear,
   newMovieImage,
   newMovieDate,
+  newMovieRating,
+  newMovieVotes,
   newMovieRuntime,
   newMovieDirector,
   newMovieWriter,
@@ -94,7 +97,10 @@ Movie.prototype.addMovieFromAPI = function (
         Title: newMovieTitle,
         Released: newMovieDate,
         imdbID: "12345",
+        imdbRating: newMovieRating,
+        imdbVotes: newMovieVotes,
         Type: newMovieType,
+        Year: newMovieYear,
         Poster: newMovieImage,
         Runtime: newMovieRuntime,
         Director: newMovieDirector,
