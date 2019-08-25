@@ -29,7 +29,7 @@
           <a href="https://apps.apple.com/us/app/imdb-movies-tv/id342792525" target="_blank"><i class="fab fa-app-store-ios"></i></a>
         </div>
         <div class="authentification same-effect">
-          <button id="add-movie" style="display:none"><span>ADD GAME</span></button>
+          <button id="add-movie" style="display:none"><span>ADD MOVIE</span></button>
           <button id=registerBtn onclick="document.getElementById('display-modal-register').style.display='block'" style="width:auto"><span>REGISTER</span></button>
           <button id=loginBtn onclick="document.getElementById('display-modal-login').style.display='block'" style="width:auto"><span>LOGIN</span></button>
           <button id=logoutBtn style="display:none;" style="width:auto"><span>LOGOUT</span></button>
@@ -214,14 +214,11 @@
                     <img src="../assets/pictures/logo.png" alt="logo" id="logoImg">
                 </div>
 
-                <div class="newImage">
-                        <label for="fileupload"> Select a file to upload</label>
-                        <input type="file" name="fileupload" value="fileupload" id="fileupload">
-                        <button class="submit-image-btn">Upload</button>
-                </div>
-
-
                 <div class="container-add-movie">
+
+                    <label for="">Image URL</label>
+                    <input type="text" placeholder="add image url" id="moviePoster">
+
                     <label for="movieTitle">Title</label>
                     <input type="text" id="movieTitle" placeholder="Enter Title" name="movieTitle" required>
 
@@ -257,8 +254,8 @@
                     <label for="movieLanguage">Language</label>
                     <input type="text" id="movieLanguage" placeholder="Language" name="movieLanguage" required>
 
-                    <label for="movieGenre" id="movieGenre">Genre</label>
-                    <select name="movieGenreSelect">
+                    <label for="movieGenre" >Genre</label>
+                    <select name="movieGenreSelect" id="movieGenre">
                                         <option value="Action">Action</option>
                                         <option value="Adventure">Adventure</option>
                                         <option value="Crime">Crime</option>
