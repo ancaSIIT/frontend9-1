@@ -1,11 +1,10 @@
 var baseUrl = "https://movies-api-siit.herokuapp.com";
-inputValue=
 
 window.Movie = function Movie(id = "") {
   this.id = id;
 };
 
-Movie.prototype.getAll = function(page = 1, flters) {
+Movie.prototype.getAll = function(page = 1, flters = {genre:"", search:""}) {
   page = parseInt(page);//convert page to integer nr
   if(page < 1){
     page = 1;
