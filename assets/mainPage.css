@@ -6,7 +6,7 @@ html {
   min-height: 100%;
   background: linear-gradient(to top, #F7AF31, black, black);
   overflow-x: hidden;
-  overflow-y: hidden;
+
 }
 
 body {
@@ -543,6 +543,8 @@ h1 ,h2 ,h3 ,h4 {
   min-height: 50px;
   margin: 10px 50px 0;
   text-align: center;
+  margin-top: 20px;
+
 }
 .pages a {
   border: 1px solid #000;
@@ -792,15 +794,9 @@ h1 ,h2 ,h3 ,h4 {
     width: 100%;
   }
 
-  .soda-image {
-    display: none;
-  }
 
-  .popcorn-image {
-    left: 1%;
-    width: 350px;
-    height: 400px;
-  }
+
+
 
   .menu>ul {
     margin-left: 0;
@@ -1311,6 +1307,7 @@ h1 ,h2 ,h3 ,h4 {
 
   .pages {
     margin-left: -42px;
+    margin-top: 30px;
   }
 }
 
@@ -1375,9 +1372,6 @@ h1 ,h2 ,h3 ,h4 {
     font-size: 0.6em;
   }
 
-  .rating-system {
-    display: none;
-  }
 
   .pages {
     margin-left: -25px;
@@ -1407,6 +1401,7 @@ h1 ,h2 ,h3 ,h4 {
 
   .search-container {
     margin-right: 5px;
+
   }
 
   .search-container > input {
