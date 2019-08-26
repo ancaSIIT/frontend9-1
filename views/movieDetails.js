@@ -165,10 +165,10 @@ var editButton = document.querySelector("#edit");
            }
        })
        //Cancel
-       var cancelEdit = document.querySelector(".cancel-edit-movie-btn");
+       var cancelEdit = document.querySelector("cancel-edit-movie-btn");
        cancelEdit.onclick = function(event) {
-           editMovieModal.style.display = "none";
-
+         editMovieModal.style.display = "none";
+         location.reload()
        };
 
  function modalFields() {

@@ -14,6 +14,62 @@ body {
   font-family: 'Acme', sans-serif;
 }
 
+/* Animation */
+
+@keyframes fade-in{
+0% {
+  opacity:0;
+}
+100% {
+  opacity:1;
+}
+}
+
+@-moz-keyframes fade-in {
+0% {
+  opacity:0;
+}
+100% {
+  opacity:1;
+}
+}
+
+@-webkit-keyframes fade-in {
+0% {
+  opacity:0;
+}
+100% {
+  opacity:1;
+}
+}
+
+@-o-keyframes fade-in {
+0% {
+  opacity:0;
+}
+100% {
+  opacity:1;
+}
+}
+
+@-ms-keyframes fade-in {
+0% {
+  opacity:0;
+}
+100% {
+  opacity:1;
+}
+}
+
+.fade-in {
+  opacity: 1;
+  animation: fade-in ease 2.5s;
+  -webkit-animation: fade-in ease 2.5s;
+  -moz-animation: fade-in ease 2.5s;
+  -o-animation: fade-in ease 2.5s;
+  -ms-animation: fade-in ease 2.5s;
+}
+
 a {
   text-decoration: none;
 }
@@ -397,7 +453,6 @@ h1 ,h2 ,h3 ,h4 {
 .delete-movie {
   opacity: 0;
   position: absolute;
-  /* width: 100%; */
   height: 20px;
   top: 3%;
   left:85%;

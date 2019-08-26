@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Acme|Playfair+Display|Roboto+Condensed|Roboto+Slab|Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
-  <body>
+<body class>
     <div class="container">
       <img class="popcorn-image" src="../assets/pictures/popcorn.png" alt="">
       <img class="soda-image" src="../assets/pictures/soda.png" alt="">
@@ -144,7 +144,7 @@
         </div>
         <p class="description"></p>
         <div class="movie-options same-effect">
-          <button id="edit" onclick="document.querySelector('.edit-movie-modal').style.display='block'"><span>Edit</span></button>
+          <button id="edit" onclick="document.querySelector('.edit-movie-modal').style.display='block'" style="display:none;"><span>Edit</span></button>
         </div>
       </div>
 
@@ -215,7 +215,7 @@
       <script src="../views/register.js"></script>
       <script src="../views/Login.js"></script>
       <script src="../views/logout.js"></script>
-      <script src="../views/edit.js"></script>
+      <!-- <script src="../views/edit.js"></script> -->
   </body>
 </html>
 

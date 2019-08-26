@@ -3,7 +3,7 @@ window.addEventListener('load', showButton)
 
 function showButton() {
   if (localStorage.getItem("accessToken") !== null) {
-  var showEdit = document.querySelectorAll('.edit');
+  var showEdit = document.querySelectorAll('#edit');
   showEdit.forEach(function(button) {
     button.style.display = "block";
     })
