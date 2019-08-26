@@ -19,10 +19,10 @@ body {
   font-family: "Acme", sans-serif;
   border: 1px solid Black;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-  width: 50%;
+  width: 40%;
   height: 1570px;
   background: linear-gradient(to top, #F37335, #FDC830);
-  margin: 20px auto 0 auto;
+  margin-left: 58%;
 }
 
 .edit-new-movie > .image {
@@ -35,7 +35,7 @@ body {
   width: 90%;
   padding: 10px 20px;
   margin: 15px;
-  display: block;
+  display: inline-block;
   border: 1px solid #ccc;
 }
 
