@@ -1197,7 +1197,7 @@ h1 ,h2 ,h3 ,h4 {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .body {
     width: 100%;
   }
@@ -1372,9 +1372,8 @@ h1 ,h2 ,h3 ,h4 {
     font-size: 0.6em;
   }
 
-
   .pages {
-    margin-left: -25px;
+    margin-left: -5px;
   }
 }
 

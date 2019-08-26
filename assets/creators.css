@@ -40,9 +40,125 @@ html {
   font-weight: bold;
   border-bottom: 2px solid black;
   width: 50%;
-
 }
-.authentification {
 
- margin-right: 40px;
+/* Responsiveness */
+@media screen and (max-width: 1400px) {
+
+  .content {
+    width: 1200px;
+  }
+
+  .col {
+    height: 650px;
+  }
+
+  .col > span {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+
+  .content {
+  width: 1000px;
+  }
+
+  .col {
+  height: 650px;
+  }
+
+  .col > span {
+  font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+
+  .content {
+  width: 800px;
+  }
+
+  .col {
+  height: 600px;
+  }
+
+  .col > span {
+  font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+
+  .content {
+  width: 600px;
+  }
+
+  .col {
+  height: 500px;
+  }
+
+  .col > img {
+    margin-top: 30px;
+    width: 80%;
+    height: 75%;
+    margin-left: 11%;
+  }
+
+  .col > span {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 655px) {
+
+  .content {
+  width: 400px;
+  }
+
+  .col {
+  height: 400px;
+  }
+
+  .col > img {
+    margin-top: 30px;
+    width: 80%;
+    height: 75%;
+    margin-left: 11%;
+  }
+
+  .col > span {
+    font-size: 10px;
+    width: 60%;
+    margin-left: 27px;
+  }
+
+  .authentification.same-effect {
+    margin-right: -0px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+
+  .content {
+  width: 320px;
+  }
+
+  .col {
+  height: 400px;
+  }
+
+  .col > img {
+    margin-top: 30px;
+    width: 90%;
+    height: 75%;
+    margin-left: 5%;
+  }
+
+  .col > span {
+    font-size: 10px;
+    width: 80%;
+    margin-left: 10px;
+  }
+
 }
