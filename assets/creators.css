@@ -1,7 +1,11 @@
+html {
+  overflow-y: auto;
+}
 .container {
   background: linear-gradient(to top, #F7AF31, black, black);
   height: 1600px;
 }
+
 .content {
   width: 1400px;
   position: relative;
